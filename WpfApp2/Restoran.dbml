@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Restoran" Class="RestoranDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-D1G72K5\SQLEXPRESS;Initial Catalog=Restoran;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="WpfApp2.Properties.Settings" SettingsPropertyName="RestoranConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Istorija" Member="Istorijas">
+    <Type Name="Istorija">
+      <Column Name="OsobljeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SmenaID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Osoblje_Istorija" Member="Osoblje" ThisKey="OsobljeID" OtherKey="OsobljeID" Type="Osoblje" IsForeignKey="true" />
+      <Association Name="Smena_Istorija" Member="Smena" ThisKey="SmenaID" OtherKey="SmenaID" Type="Smena" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Usluga" Member="Uslugas">
+    <Type Name="Usluga">
+      <Column Name="PorudzbinaID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StavkaID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Količina" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ukupno" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Napomena" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="Porudzbina_Usluga" Member="Porudzbina" ThisKey="PorudzbinaID" OtherKey="PorudzbinaID" Type="Porudzbina" IsForeignKey="true" />
+      <Association Name="Stavka_Usluga" Member="Stavka" ThisKey="StavkaID" OtherKey="StavkaID" Type="Stavka" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Osoblje" Member="Osobljes">
+    <Type Name="Osoblje">
+      <Column Name="OsobljeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ime" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Prezime" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Uloga" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Kontakt" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Plata" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Admin" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="Osoblje_Istorija" Member="Istorijas" ThisKey="OsobljeID" OtherKey="OsobljeID" Type="Istorija" />
+      <Association Name="Osoblje_Porudzbina" Member="Porudzbinas" ThisKey="OsobljeID" OtherKey="OsobljeID" Type="Porudzbina" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Porudzbina" Member="Porudzbinas">
+    <Type Name="Porudzbina">
+      <Column Name="PorudzbinaID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StoID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OsobljeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VremePorudzbine" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Zavrseno" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Porudzbina_Usluga" Member="Uslugas" ThisKey="PorudzbinaID" OtherKey="PorudzbinaID" Type="Usluga" />
+      <Association Name="Osoblje_Porudzbina" Member="Osoblje" ThisKey="OsobljeID" OtherKey="OsobljeID" Type="Osoblje" IsForeignKey="true" />
+      <Association Name="Sto_Porudzbina" Member="Sto" ThisKey="StoID" OtherKey="StoID" Type="Sto" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Smena" Member="Smenas">
+    <Type Name="Smena">
+      <Column Name="SmenaID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Datum" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="PocetakSmene" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="KrajSmene" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Association Name="Smena_Istorija" Member="Istorijas" ThisKey="SmenaID" OtherKey="SmenaID" Type="Istorija" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Stavka" Member="Stavkas">
+    <Type Name="Stavka">
+      <Column Name="StavkaID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Naziv" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Kategorija" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Cena" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="Stavka_Usluga" Member="Uslugas" ThisKey="StavkaID" OtherKey="StavkaID" Type="Usluga" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sto" Member="Stos">
+    <Type Name="Sto">
+      <Column Name="StoID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Kapacitet" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Lokacija" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Rezervisano" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Napomena" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="Sto_Porudzbina" Member="Porudzbinas" ThisKey="StoID" OtherKey="StoID" Type="Porudzbina" />
+    </Type>
+  </Table>
+</Database>

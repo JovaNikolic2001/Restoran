@@ -1,0 +1,65 @@
+﻿<Window x:Class="WpfApp2.NovaPorudzbina"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="Nova porudžbina" Height="375" Width="817" Loaded="Window_Loaded">
+    <Window.Resources>
+        <DataTemplate x:Key="listBoxTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Naziv}"/>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Label x:Name="lZauzet" Content="Sto zauzet od strane:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="27" Visibility="Hidden" FontWeight="Bold"/>
+        <Label x:Name="lZauzetoOd" Content="" HorizontalAlignment="Left" Margin="130,10,0,0" VerticalAlignment="Top" Height="27" Visibility="Visible" FontWeight="Bold"/>
+        <Label x:Name="lUlogovan" Content="Trenutno ulogovan: " HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="27"/>
+        <Label Content="Lista stavki" HorizontalAlignment="Left" Margin="47,42,0,0" VerticalAlignment="Top" Height="27"/>
+        <ListBox x:Name="listBoxStavka" ItemTemplate="{StaticResource listBoxTemplate}" SelectionChanged="listBoxStavka_SelectionChanged" Width="130" Height="250" Margin="15,69,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Label x:Name="lIme" Content="" HorizontalAlignment="Left" Margin="170,65,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Kategorija:" HorizontalAlignment="Left" Margin="170,85,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lKategorija" Content="" HorizontalAlignment="Left" Margin="170,105,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Content="Cena:" HorizontalAlignment="Left" Margin="170,125,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lCena" Content="" HorizontalAlignment="Left" Margin="170,145,0,0" VerticalAlignment="Top" Width="60"/>
+        <Label Content="RSD" HorizontalAlignment="Left" Margin="200,145,0,0" VerticalAlignment="Top"/>
+        <Label Content="Količina:" HorizontalAlignment="Left" Margin="170,165,0,0" VerticalAlignment="Top" Width="54"/>
+        <Grid Height="23" Margin="220,165,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200">
+            <TextBox x:Name="tbBroj" x:FieldModifier="private" VerticalAlignment="Top" HorizontalAlignment="Left" Text="1" Margin="10,2,139,3" IsReadOnly="True" Width="50" TextChanged="tbBroj_TextChanged"/>
+            <Button x:Name="btnGore" x:FieldModifier="private" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="10" Padding="0,-4,0,0" Content="▲" Width="10" Margin="49,2,140,0" Click="btnGore_Click" Height="8"/>
+            <Button x:Name="btnDole" x:FieldModifier="private" HorizontalAlignment="Left" FontSize="10" Padding="0,-4,0,0" Content="▼" Width="10" Margin="49,12,0,3" Click="btnDole_Click" />
+        </Grid>
+        <Button x:Name="btnIzaberi" Content="Izaberi" Height="20" Width="113" Margin="170,299,0,0" Click="btnIzaberi_Click" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Button x:Name="btnIzmena" Content="Izmeni" Height="20" Width="113" Margin="170,299,0,0" Visibility="Hidden" Click="btnIzmena_Click" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Label Content="Lista za poručivanje" HorizontalAlignment="Left" Margin="316,42,0,0" VerticalAlignment="Top" Height="27"/>
+        <ListBox x:Name="listBoxPorudzbina" ItemTemplate="{StaticResource listBoxTemplate}" Margin="308,69,0,0" Width="130" Height="190" SelectionChanged="listBoxPorudzbina_SelectionChanged" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Button x:Name="btnIzbrisi" Content="Izbrisi odabrano" Height="20" Width="130" HorizontalAlignment="Left" Margin="308,270,0,0" VerticalAlignment="Top" Click="btnIzbrisi_Click"/>
+        <Button x:Name="btnPoruci" Content="Napravi porudzbinu" Height="20" Width="130" HorizontalAlignment="Left" Margin="308,299,0,0" VerticalAlignment="Top" Click="btnPoruci_Click"/>
+        <Label Content="Napomena" HorizontalAlignment="Left" Margin="170,185,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbNapomena" HorizontalAlignment="Left" VerticalAlignment="Top" Height="85" Width="124" Margin="166,205,0,0" TextWrapping="Wrap" AcceptsReturn="True"/>
+        <Label Content="Poručene stavke" HorizontalAlignment="Left" Margin="578,42,0,0" VerticalAlignment="Top" Height="27"/>
+        <DataGrid x:Name="dataGridPorIzBaze" Margin="463,69,0,0" Width="308" Height="210" VerticalAlignment="Top" HorizontalAlignment="Left" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Naziv" Binding="{Binding Naziv}" Width="130"/>
+                <DataGridTextColumn Header="Količina" Binding="{Binding Količina}" Width="50"/>
+                <DataGridTemplateColumn Header="Napomena">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="PrikaziNapomenu">Pregled</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Brisanje">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="IzbrisiStavku">Izbrisi</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnZatvori" Content="Zatvori porudžbinu" HorizontalAlignment="Left" Margin="526,299,0,0" VerticalAlignment="Top" Width="200" Click="btnZatvori_Click" />
+    </Grid>
+</Window>

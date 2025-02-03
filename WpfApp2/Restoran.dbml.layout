@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 12.75" name="Restoran">
+  <DataContextMoniker Name="/RestoranDataContext" />
+  <nestedChildShapes>
+    <classShape Id="cf5bda00-4247-46a7-85f6-0db2b886b69b" absoluteBounds="3.5, 4, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/RestoranDataContext/Istorija" />
+      <nestedChildShapes>
+        <elementListCompartment Id="347944f9-a600-4a2d-aed8-49eee04b3927" absoluteBounds="3.515, 4.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e48b0c9e-b73a-4c08-a651-7fc174cdf19d" absoluteBounds="6.25, 0.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/RestoranDataContext/Usluga" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b12cf3c1-5b38-49b8-a709-4da96dfbb869" absoluteBounds="6.265, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="db7aeec0-d961-47eb-bda4-a483e947adbd" absoluteBounds="0.75, 3.375, 2, 2.5401025390625">
+      <DataClassMoniker Name="/RestoranDataContext/Osoblje" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b1f8546f-2b7b-4920-b9ea-a4ec3d4c17ee" absoluteBounds="0.765, 3.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f6721670-50d4-4085-ab3a-f540fa3d49ea" absoluteBounds="3.5, 0.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/RestoranDataContext/Porudzbina" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e8d6de05-8149-4cf4-9a35-65041e759eef" absoluteBounds="3.515, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e935097f-2e31-435e-8201-02f458a25ef6" absoluteBounds="0.75, 10.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/RestoranDataContext/Smena" />
+      <nestedChildShapes>
+        <elementListCompartment Id="830a7e8b-4f5e-4d42-8924-3f03b6211e0f" absoluteBounds="0.765, 11.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="133d9bbb-1779-4ecd-b7ba-fbcd739205d3" absoluteBounds="3.5, 7.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/RestoranDataContext/Stavka" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3a8482aa-b850-48ba-bcae-7b2801a7ef4b" absoluteBounds="3.515, 7.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5cbe4a40-9e8b-4537-92ad-0c0f6de44f32" absoluteBounds="0.75, 7.375, 2, 1.7708968098958326">
+      <DataClassMoniker Name="/RestoranDataContext/Sto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1ff6f0c9-5708-4b4a-af03-1fdfcc09c9ac" absoluteBounds="0.765, 7.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 4.59699625651042); (3.22916666666667 : 4.59699625651042 : JumpStart); (3.39583333333333 : 4.59699625651042 : JumpEnd); (3.5 : 4.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RestoranDataContext/Osoblje/Osoblje_Istorija" />
+      <nodes>
+        <classShapeMoniker Id="db7aeec0-d961-47eb-bda4-a483e947adbd" />
+        <classShapeMoniker Id="cf5bda00-4247-46a7-85f6-0db2b886b69b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 1.63544840494792); (6.25 : 1.63544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RestoranDataContext/Porudzbina/Porudzbina_Usluga" />
+      <nodes>
+        <classShapeMoniker Id="f6721670-50d4-4085-ab3a-f540fa3d49ea" />
+        <classShapeMoniker Id="e48b0c9e-b73a-4c08-a651-7fc174cdf19d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 3.375); (1.75 : 1.63544840494792); (3.5 : 1.63544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RestoranDataContext/Osoblje/Osoblje_Porudzbina" />
+      <nodes>
+        <classShapeMoniker Id="db7aeec0-d961-47eb-bda4-a483e947adbd" />
+        <classShapeMoniker Id="f6721670-50d4-4085-ab3a-f540fa3d49ea" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 10.8762133041366); (3.125 : 10.5012133041366); (3.125 : 4.92674638476563); (3.22916666666667 : 4.92674638476562 : JumpStart); (3.39583333333333 : 4.92674638476563 : JumpEnd); (3.5 : 4.92674638476563)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RestoranDataContext/Smena/Smena_Istorija" />
+      <nodes>
+        <classShapeMoniker Id="e935097f-2e31-435e-8201-02f458a25ef6" />
+        <classShapeMoniker Id="cf5bda00-4247-46a7-85f6-0db2b886b69b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 8.03929768880208); (7.25 : 8.03929768880208); (7.25 : 2.52089680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RestoranDataContext/Stavka/Stavka_Usluga" />
+      <nodes>
+        <classShapeMoniker Id="133d9bbb-1779-4ecd-b7ba-fbcd739205d3" />
+        <classShapeMoniker Id="e48b0c9e-b73a-4c08-a651-7fc174cdf19d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.4362992741887); (3.06607443490112 : 7.12022483928758 : JumpStart); (3.18392556509888 : 7.00237370908982 : JumpEnd); (3.3125 : 6.8737992741887); (3.3125 : 2.10942460742187); (3.5 : 2.10942460742187)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RestoranDataContext/Sto/Sto_Porudzbina" />
+      <nodes>
+        <classShapeMoniker Id="5cbe4a40-9e8b-4537-92ad-0c0f6de44f32" />
+        <classShapeMoniker Id="f6721670-50d4-4085-ab3a-f540fa3d49ea" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

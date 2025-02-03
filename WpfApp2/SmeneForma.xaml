@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfApp2.SmeneForma"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="Smene" Height="445" Width="485" GotFocus="Window_GotFocus">
+    <Grid>
+        <Button x:Name="btnDodajSmene" Content="Dodaj smene" HorizontalAlignment="Left" Margin="60,10,0,0" VerticalAlignment="Top" Width="100" Click="btnDodajSmene_Click"/>
+        <Button x:Name="btnRasporediSmene" Content="Rasporedi smene" HorizontalAlignment="Left" Margin="290,10,0,0" VerticalAlignment="Top" Width="100" Click="btnRasporediSmene_Click"/>
+        <Button x:Name="btnMojeSmene" Content="Moje smene" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="20" Margin="35,40,0,0" Click="btnMojeSmene_Click"/>
+        <Button x:Name="btnRefresh" HorizontalAlignment="Left" Margin="218,38,0,0" VerticalAlignment="Top" Height="25" Width="25" RenderTransformOrigin="0.5,0.5" Click="btnRefresh_Click" ToolTip="Azuriraj smene">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="Slike/refresh.png" Margin="0,0,0,0" Width="25" Height="25"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="btnSveSmene" Content="Sve smene" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="20" Margin="265,40,0,0" Click="btnSveSmene_Click"/>
+        <DataGrid x:Name="dataGridSmene" HorizontalAlignment="Left" VerticalAlignment="Top" Height="350" AutoGenerateColumns="False" Margin="5,75,5,10" Width="458">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Ime" Width="80" Binding="{Binding Ime, Mode=OneWay}"/>
+                <DataGridTextColumn Header="Prezime" Width="100" Binding="{Binding Prezime, Mode=OneWay}"/>
+                <DataGridTextColumn Header="Datum" Width="70" Binding="{Binding Datumi, Mode=OneWay}"/>
+                <DataGridTextColumn Header="Pocetak smene" Width="100" Binding="{Binding PocetakSmene, Mode=OneWay}"/>
+                <DataGridTextColumn Header="Kraj smene" Width="80" Binding="{Binding KrajSmene, Mode=OneWay}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

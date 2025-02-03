@@ -1,0 +1,148 @@
+﻿<Window x:Class="WpfApp2.OceanEdgeResort"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="OceanEdgeResort" Height="470" Width="770" Closing="Window_Closing">
+    <Grid>
+        <Button x:Name="btnPregledSmena" Content="Pregledaj smene" Width="120" HorizontalAlignment="Left" Margin="30,15,0,0" VerticalAlignment="Top" Click="btnPregledSmena_Click"/>
+        <Button x:Name="btnRefresh" HorizontalAlignment="Left" Margin="170,15,0,0" VerticalAlignment="Top" Height="26" Width="26" RenderTransformOrigin="0.5,0.5" Click="btnRefresh_Click" ToolTip="Azuriraj stolove">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="Slike/refresh.png" Margin="0,0,0,0" Width="25" Height="25"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="btnSto1" Content="1" HorizontalAlignment="Left" Margin="20,45,0,0" VerticalAlignment="Top" Height="150" Width="150" RenderTransformOrigin="0.5,0.5" Click="btnSto1_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="Slike/StoZaSest_1.png" Margin="0,0,0,0" Width="150" Height="150"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="btnSto2" Content="2" HorizontalAlignment="Left" Margin="20,188,0,0" VerticalAlignment="Top" Height="150" Width="150" RenderTransformOrigin="0.5,0.5" Click="btnSto1_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="Slike/StoZaSest_2.png" Margin="0,0,0,0" Width="150" Height="150"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Content="Bush" HorizontalAlignment="Left" Margin="20,304,0,0" VerticalAlignment="Top" Height="150" Width="150" RenderTransformOrigin="0.5,0.5">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="Slike/Bush.png" Margin="0,0,0,0" Width="70" Height="150" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="btnSto3" Content="3" HorizontalAlignment="Left" Margin="216,0,0,0" VerticalAlignment="Top" Height="150" Width="150" RenderTransformOrigin="0.5,0.5" Click="btnSto1_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="Slike/StoZaCetiri_3.png" Margin="0,0,0,0" Width="110" Height="150" RenderTransformOrigin="0.5,0.5"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="btnSto4" Content="4" HorizontalAlignment="Left" Margin="229,169,0,0" VerticalAlignment="Top" Height="80" Width="80" RenderTransformOrigin="0.5,0.5" Click="btnSto1_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="Slike/StoZaDve_4.png" Margin="0,0,0,0" Width="50" Height="80"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="btnSto5" Content="5" HorizontalAlignment="Left" Margin="216,274,0,0" VerticalAlignment="Top" Height="150" Width="150" RenderTransformOrigin="0.5,0.5" Click="btnSto1_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="Slike/StoZaCetiri_5.png" Margin="0,0,0,0" Width="110" Height="150"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="btnSto6" Content="6" HorizontalAlignment="Left" Margin="371,0,0,0" VerticalAlignment="Top" Height="150" Width="150" RenderTransformOrigin="0.5,0.5" Click="btnSto1_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="Slike/StoZaCetiri_6.png" Margin="0,0,0,0" Width="110" Height="150"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="btnSto7" Content="7" HorizontalAlignment="Left" Margin="441,169,0,0" VerticalAlignment="Top" Height="80" Width="80" RenderTransformOrigin="0.5,0.5" Click="btnSto1_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="Slike/StoZaDve_7.png" Margin="0,0,0,0" Width="50" Height="80"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="btnSto8" Content="8" HorizontalAlignment="Left" Margin="371,274,0,0" VerticalAlignment="Top" Height="150" Width="150" RenderTransformOrigin="0.5,0.5" Click="btnSto1_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="Slike/StoZaCetiri_8.png" Margin="0,0,0,0" Width="110" Height="150"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Content="Bush" HorizontalAlignment="Left" Margin="526,10,0,0" VerticalAlignment="Top" Height="153" Width="57" RenderTransformOrigin="0.5,0.5">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="Slike/Bush.png" Margin="0,0,0,0" Width="110" Height="150"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Content="Bush" HorizontalAlignment="Left" Margin="526,256,0,0" VerticalAlignment="Top" Height="153" Width="57" RenderTransformOrigin="0.5,0.5">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="Slike/Bush.png" Margin="0,0,0,0" Width="110" Height="150"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="btnSto9" Content="9" HorizontalAlignment="Left" Margin="603,0,0,0" VerticalAlignment="Top" Height="150" Width="150" RenderTransformOrigin="0.5,0.5" Click="btnSto1_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="Slike/StoZaCetiri_9.png" Margin="0,0,0,0" Width="110" Height="150"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="btnSto10" Content="10" HorizontalAlignment="Left" Margin="603,134,0,0" VerticalAlignment="Top" Height="150" Width="150" RenderTransformOrigin="0.5,0.5" Click="btnSto1_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="Slike/StoZaCetiri_10.png" Margin="0,0,0,0" Width="110" Height="150"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="btnSto11" Content="11" HorizontalAlignment="Left" Margin="603,274,0,0" VerticalAlignment="Top" Height="150" Width="150" RenderTransformOrigin="0.5,0.5" Click="btnSto1_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="Slike/StoZaCetiri_11.png" Margin="0,0,0,0" Width="110" Height="150"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Label x:Name="Zauzet1" Content="Zauzet od strane: " HorizontalAlignment="Left" Margin="43,50,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="OdStrane1" Content="" HorizontalAlignment="Left" Margin="50,160,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="Zauzet2" Content="Zauzet od strane: " HorizontalAlignment="Left" Margin="43,194,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="OdStrane2" Content="" HorizontalAlignment="Left" Margin="50,303,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="Zauzet3" Content="Zauzet od strane: " HorizontalAlignment="Left" Margin="239,0,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="OdStrane3" Content="" HorizontalAlignment="Left" Margin="245,123,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="Zauzet4" Content="Zauzet od strane: " HorizontalAlignment="Left" Margin="217,151,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="OdStrane4" Content="" HorizontalAlignment="Left" Margin="218,240,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="Zauzet5" Content="Zauzet od strane: " HorizontalAlignment="Left" Margin="239,274,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="OdStrane5" Content="" HorizontalAlignment="Left" Margin="240,395,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="Zauzet6" Content="Zauzet od strane: " HorizontalAlignment="Left" Margin="394,0,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="OdStrane6" Content="" HorizontalAlignment="Left" Margin="395,123,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="Zauzet7" Content="Zauzet od strane: " HorizontalAlignment="Left" Margin="429,151,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="OdStrane7" Content="" HorizontalAlignment="Left" Margin="430,240,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="Zauzet8" Content="Zauzet od strane: " HorizontalAlignment="Left" Margin="394,274,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="OdStrane8" Content="" HorizontalAlignment="Left" Margin="395,395,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="Zauzet9" Content="Zauzet od strane: " HorizontalAlignment="Left" Margin="626,7,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="OdStrane9" Content="" HorizontalAlignment="Left" Margin="630,115,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="Zauzet10" Content="Zauzet od strane: " HorizontalAlignment="Left" Margin="626,140,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="OdStrane10" Content="" HorizontalAlignment="Left" Margin="630,250,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="Zauzet11" Content="Zauzet od strane: " HorizontalAlignment="Left" Margin="626,280,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="OdStrane11" Content="" HorizontalAlignment="Left" Margin="630,390,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+    </Grid>
+</Window>

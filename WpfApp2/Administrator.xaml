@@ -1,0 +1,19 @@
+﻿<Window x:Class="WpfApp2.Administrator"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="Administrator" Height="410" Width="305" Closing="Window_Closing">
+    <Grid>
+        <Label Content="Trenutno ulogovan:" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="30" FontSize="15"/>
+        <Label x:Name="lUlogovan" Content="" HorizontalAlignment="Center" Margin="0,35,0,0" VerticalAlignment="Top" Height="30" FontSize="15" FontWeight="Bold"/>
+        <Button x:Name="btnOsoblje" Content="Osoblje" HorizontalAlignment="Center" Margin="0,90,0,0" VerticalAlignment="Top" Click="btnOsoblje_Click" Height="30" Width="200"/>
+        <Button x:Name="btnPorudzbine" Content="Sve porudzbine" HorizontalAlignment="Center" Margin="0,145,0,0" VerticalAlignment="Top" Height="30" Width="200" Click="btnPorudzbine_Click"/>
+        <Button x:Name="btnDodavanjeStavke" Content="Izmena stavki" HorizontalAlignment="Center" Margin="0,200,0,0" VerticalAlignment="Top" Click="btnDodavanjeStavke_Click" Height="30" Width="200"/>
+        <Button x:Name="btnSmene" Content="Sve smene" HorizontalAlignment="Center" Margin="0,255,0,0" VerticalAlignment="Top" Height="30" Width="200" Click="btnSmene_Click"/>
+        <Button x:Name="btnNovaPorudzbina" Content="Nova porudzbina" HorizontalAlignment="Center" Margin="0,310,0,0" VerticalAlignment="Top" Height="30" Width="200" Click="btnNovaPorudzbina_Click"/>
+
+    </Grid>
+</Window>
